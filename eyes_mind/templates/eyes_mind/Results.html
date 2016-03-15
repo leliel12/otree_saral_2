@@ -1,0 +1,50 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Reading the mind in the eyes
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12 lead">
+            <p>You answered <span class="text-info">{{player_answer}}</span>
+            {% if is_correct %}
+            <span class="text-success">, and is correct</span></p>
+            {% else %}
+            </p><p>The correct answer is <span class="text-danger">{{correct_answer}}</span></p>
+            {% endif %}
+        </div>
+    </div>
+
+    <hr>
+    <div class="row lead">
+        <div class="col-md-12">
+            <span class="text-left {% if answer_idx == 0 %}text-success{% endif %}">{{options.0}}</span>
+            <span class="pull-right {% if answer_idx == 1 %}text-success{% endif %}">{{options.1}}</span>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <img src="{% static image %}">
+            </div>
+        </div>
+    </div>
+    <div class="row lead">
+        <div class="col-md-12">
+            <span class="text-left {% if answer_idx == 2 %}text-success{% endif %}">{{options.2}}</span>
+            <span class="pull-right {% if answer_idx == 3 %}text-success{% endif %}">{{options.3}}</span>
+        </div>
+    </div>
+    <hr>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Proceed">
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}

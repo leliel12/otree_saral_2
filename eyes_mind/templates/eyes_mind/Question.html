@@ -1,0 +1,65 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Reading the mind in the eyes
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% if is_practice %}
+            <h3 class="text-center text-info">Practice screen for picking answer and clicking next.</h3>
+            <h2 class="text-center">Progress: Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}} <span class="text-info">(Practice)</span></h2>
+            {% else %}
+            <h2 class="text-center">Progress: Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}}</h2>
+            {% endif %}
+            <div class="text-center text-info">
+                <small>Do not press "Reload" or the back button. If you do, you will have to restart the experiment from scratch</small>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+    <div class="row lead text-info">
+        <div class="col-md-12"><span class="text-left">{{options.0}}</span><span class="pull-right">{{options.1}}</span></div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center">
+                <img src="{% static image %}">
+            </div>
+        </div>
+    </div>
+    <div class="row lead text-info">
+        <div class="col-md-12"><span class="text-left">{{options.2}}</span><span class="pull-right">{{options.3}}</span></div>
+    </div>
+    <hr>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="text-center lead">
+                {% for field in form %}{{field}}{% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Proceed">
+        </div>
+    </div>
+    <br>
+    {% if is_practice %}
+    <br>
+    <div class="row well">
+        <div class="col-md-12">
+            {% include "eyes_mind/_instructions.html" %}
+        </div>
+    </div>
+    {% endif %}
+</div>
+
+{% endblock %}

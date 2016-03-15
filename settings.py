@@ -128,12 +128,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 
 SESSION_CONFIGS = [
-    #~ {
-        #~ 'name': 'public_goods',
-        #~ 'display_name': "Public Goods",
-        #~ 'num_demo_participants': 3,
-        #~ 'app_sequence': ['public_goods', 'payment_info'],
-    #~ },
+    {
+        'name': 'eyes_mind',
+        'display_name': "Readng the Mind in the Eyes",
+        'num_demo_participants': 1,
+        'app_sequence': ['eyes_mind'],
+    },
 
 ]
 
