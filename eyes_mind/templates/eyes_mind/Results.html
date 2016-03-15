@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Reading the mind in the eyes
+    Reading the mind in the eyes - Result {% if is_practice %}Practice{% else %}Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}}{% endif %}
 {% endblock %}
 
 {% block content %}

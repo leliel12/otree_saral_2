@@ -69,7 +69,7 @@ class Question(Page):
     def before_next_page(self):
         round_number, question, field_name, response = self.get_question_data()
         if question["options"][question["answer"]] == response:
-            self.player.responses_correct += 1
+            self.player.payoff = 1
 
 
 class Result(Page):
@@ -101,6 +101,13 @@ class Resume(Page):
 
     def is_displayed(self):
         return self.subsession.round_number == Constants.num_rounds
+
+    def vars_for_template(self):
+        return {
+            'total_payoff': int(
+                sum([p.payoff or 0 for p in self.player.in_all_rounds()])
+            )
+        }
 
 
 

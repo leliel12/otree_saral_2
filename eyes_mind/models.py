@@ -117,5 +117,4 @@ class Player(BasePlayer):
     response_q35 = models.CharField(max_length=255, choices=Constants.questions[34]["options"], widget=widgets.RadioSelectHorizontal())
     response_q36 = models.CharField(max_length=255, choices=Constants.questions[35]["options"], widget=widgets.RadioSelectHorizontal())
 
-    responses_correct = models.IntegerField(default=0)
 
