@@ -1,0 +1,34 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Reading the mind in the eyes - Resume
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="row">
+        <div class="col-md-12 lead">
+            Your score is <span class="text-info">{{player.responses_correct}}</span> out of {{Constants.questions|length}}
+        </div>
+    </div>
+
+    <div class="row well">
+        <div class="col-md-12">
+            <h3>How did others do on this test?</h3>
+           The average score is <strong>26</strong>. But we found that not everyone does the same on this test:
+            <ul>
+                <li>Women, on average, score half a point higher than men.</li>
+                <li>Young people under 18 score substantially lowerthan adults.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Finish">
+        </div>
+    </div>
+</div>
+<br>
+{% endblock %}
