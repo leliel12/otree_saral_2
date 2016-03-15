@@ -89,19 +89,23 @@ class Result(Page):
         is_correct = (player_answer == correct_answer)
         return {
             "is_practice": False,
-            "options": Constants.example["options"],
+            "options": question["options"],
             "correct_answer": correct_answer,
-            "answer_idx": Constants.example["answer"],
+            "answer_idx": question["answer"],
             "player_answer": player_answer,
             "is_correct": is_correct,
             "image": "/".join(["eyes_mind", question["fname"]])}
 
 
+class Resume(Page):
+
+    def is_displayed(self):
+        return self.subsession.round_number == Constants.num_rounds
 
 
 
 
 page_sequence = [
-    #~ Example, ResultExample,
-    Question, Result
+    Example, ResultExample,
+    Question, Result, Resume
 ]
