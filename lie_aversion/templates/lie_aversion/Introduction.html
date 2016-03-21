@@ -1,0 +1,34 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Coin flip instrucions
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>For this part, we would like to ask you to get a coin.</p>
+            <p>After receiving the instructions, you will be asked to toss the coin, and you will have to report&nbsp;afterwards how often the coin came up with tails.</p>
+            <p>For every time tails you will receive <strong>{{Constants.euros_per_toss}} euros</strong></p>
+            <p>You receive <strong>0</strong> euros if tails never comes up; you receive <strong>5 euros</strong> if tails comes up <strong>once</strong>; <strong>10 euros</strong> if&nbsp;it comes up <strong>twice</strong>; <strong>15 euros</strong> if it comes up <strong>three times</strong>; and <strong>20 euros</strong> if it comes up <strong>four times</strong>.</p>
+            <p>This payment will be in addition to the payments that you will receive for the previous&nbsp;experiment.</p>
+            <p><strong>Once again:</strong> You toss the coin four times, count how often tails came up and then report how&nbsp;often tails came up. You&rsquo;ll receive <strong>5 euros per times tails.</strong></p>
+            <p>You will report the number of tails on the next screen: after you tossed the coin for times, you will&nbsp;</p>
+            <p>input the number of tails in a text box on this next screen.</p>
+            <p>Please don&rsquo;t start just yet.</p>
+            <p>If you have understood the rules, click <strong class="text-info">"Next"</strong></p>
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

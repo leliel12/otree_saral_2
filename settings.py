@@ -57,8 +57,8 @@ AWS_SECRET_ACCESS_KEY = environ.get('AWS_SECRET_ACCESS_KEY')
 
 
 # e.g. EUR, CAD, GBP, CHF, CNY, JPY
-REAL_WORLD_CURRENCY_CODE = 'USD'
-USE_POINTS = True
+REAL_WORLD_CURRENCY_CODE = 'EUR'
+USE_POINTS = False
 
 
 # e.g. en-gb, de-de, it-it, fr-fr.
@@ -128,6 +128,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 
 SESSION_CONFIGS = [
+    {
+        'name': 'lie_aversion',
+        'display_name': "Lie Aversion",
+        'num_demo_participants': 1,
+        'app_sequence': ['lie_aversion'],
+    },
     {
         'name': 'eyes_mind',
         'display_name': "Readng the Mind in the Eyes",

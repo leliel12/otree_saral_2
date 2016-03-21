@@ -1,0 +1,31 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Coin Flip
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p class="lead">Please toss the coin four times now and remember how often tails came up.</p>
+            <p class="lead">Then input the number of tails below. Once you have finished, click <strong class="text-info">"Next"</strong>.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {{form}}
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}
