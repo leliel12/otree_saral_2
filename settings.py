@@ -129,6 +129,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'preference_for_skew',
+        'display_name': "Preference For Skew",
+        'num_demo_participants': 1,
+        'app_sequence': ['preference_for_skew'],
+    },
+    {
         'name': 'lie_aversion',
         'display_name': "Lie Aversion",
         'num_demo_participants': 1,

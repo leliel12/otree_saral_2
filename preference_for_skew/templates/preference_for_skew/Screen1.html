@@ -1,0 +1,22 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Screen 1
+{% endblock %}
+
+{% block content %}
+
+    <h3>Individuals makes a choice of wich lottery A-F</h3>
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/latest/pygal-tooltips.min.js"></script>
+    <figure size="25%">
+        <!-- Pygal render() result: -->
+        {{graph|safe}}
+        <!-- End of Pygal render() result: -->
+    </figure>
+    <ol class="lead">
+        <li>foo</li>
+    </ol>
+    {% next_button %}
+
+{% endblock %}
