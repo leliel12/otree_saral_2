@@ -14,9 +14,30 @@
         {{graph|safe}}
         <!-- End of Pygal render() result: -->
     </figure>
-    <ol class="lead">
-        <li>{{form.field}}</li>
-    </ol>
+    <table class="table table-hover">
+        <tr class="skewrow">
+            <th class="lead text-info">1</th><td class="skews">{{form.skewchoice1}}</td>
+        </tr>
+    </table>
     {% next_button %}
+
+
+    <script>
+        $(document).ready(function(){
+            $("tr.skewrow").each(function(sr_idx, row){
+                var $row = $(row);
+                var $labels = $row.find("td.skews label");
+
+                $row.find("td.skews").remove();
+                $labels.each(function(idx, label){
+                    var $label = $(label);
+                    $row.append("<td></td>");
+                    var $td = $row.find("td:last");
+                    $td.append(label);
+                });
+
+            });
+        });
+    </script>
 
 {% endblock %}
