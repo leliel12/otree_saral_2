@@ -28,8 +28,18 @@ class Constants(BaseConstants):
         "data": pie_data,
         "labels": ["{}%".format(d) for d in pie_data],
         "title": "Please Choose your most preferred gamble",
+        "colors": ['#EE9095', '#90EE90', '#AB90EE']
     }
     skew_choices = ["A", "B", "C", "D", "E", "F"]
+
+    skewchoices1 = {
+        'A': [1.0, 1.0, 1.0],
+        'B': [0.6, 1.8, 1.8],
+        'C': [0.2, 2.6, 2.6],
+        'D': [-0.2, 3.4, 3.4],
+        'E': [-0.6, 4.2, 4.2],
+        'F': [-1.2, 4.8, 4.8]
+    }
 
 
 class Subsession(BaseSubsession):
@@ -42,6 +52,6 @@ class Group(BaseGroup):
 
 class Player(BasePlayer):
 
-    skewchoice1 = models.CharField(max_length=50, choices=Constants.skew_choices, widget=widgets.RadioSelectHorizontal())
+    skewchoice1 = models.CharField(max_length=50, choices=sorted(Constants.skewchoices1), widget=widgets.RadioSelectHorizontal())
     skewchoice2 = models.CharField(max_length=50, choices=Constants.skew_choices, widget=widgets.RadioSelectHorizontal())
     skewchoice3 = models.CharField(max_length=50, choices=Constants.skew_choices, widget=widgets.RadioSelectHorizontal())

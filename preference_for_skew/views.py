@@ -15,7 +15,11 @@ class Screen1(Page):
     form_fields = ['skewchoice1']
 
     def vars_for_template(self):
-        return {"graph": graph.render(**Constants.pie_conf)}
+        pie, squares = graph.render(**Constants.pie_conf)
+        return {
+            "graph": pie,
+            "choices": Constants.skewchoices1,
+            "squares": squares}
 
 
 page_sequence = [
