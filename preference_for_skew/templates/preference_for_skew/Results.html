@@ -1,32 +1,59 @@
-$(document).ready(function(){
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
 
-            var CHOICES = {{choices|safe}};
-            var SQUARES = {{squares|safe}};
+{% block title %}
+    Results
+{% endblock %}
 
-            $("tr.skewrow").each(function(sr_idx, row){
-                var $row = $(row);
-                var $labels = $row.find("td.skews label");
+{% block content %}
+<style>
+    ul.nobullets {
+        padding-left: 20px;
+        list-style-type: none;
+    }
 
-                $row.find("td.skews").remove();
-                $labels.each(function(idx, label){
-                    var $label = $(label);
-                    $row.append("<td></td>");
-                    var $td = $row.find("td:last");
-                    $td.append(label);
+    ul.nobullets figure, .inlinefigure {
+        display: inline;
+    }
+</style>
 
-                    $td.append("<ul class='nobullets'></ul>");
-                    var $ul = $td.find("ul:last");
+<div class="content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <strong class=" lead">The lottery you have chosen to play is</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="well">
+                <h3>{{soption}}</h3>
+                <ul class="nobullets">
+                    {% for sq, desc in choices %}
+                    <li>
+                        <figure>{{sq|safe}}</figure>&nbsp;{{desc|c}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+               <strong class="lead">The die landed on &nbsp;<figure class="inlinefigure">{{landed|safe}}</figure></strong>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <strong class="lead">Since you choose <span class="text-info">{{soption}}</span> You have earned <span class="text-info">{{player.payoff}}</span>.</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% next_button %}
+    </div>
 
-                    var choices = CHOICES[$label.text().trim()];
-                    for(var idx=0; idx < choices.length; idx++){
-                        var choice  = choices[idx];
-                        var square = SQUARES[idx];
-                        $ul.append('<li><figure>'+ square +'</figure>&nbsp;$' + choice.toFixed(2) + '</li>');
-                    }
-                });
-            });
 
-            window.setTimeout(function(){
-                $("#realcontent").show();
-            }, 2000);
-        });
+
+
+</div>
+
+{% endblock %}

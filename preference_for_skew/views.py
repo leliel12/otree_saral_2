@@ -76,7 +76,7 @@ class Screen3(Page, AbstractScreen):
             title="Below you can see the choice you mae previously, and Gamble Set 3. Please Choose your most preferred gamble",
             **Constants.pie_conf)
         choices = self.get_choices(squares)
-        selected = [self.player.skewchoice1, self.player.skewchoice2]
+        selected = ["", self.player.skewchoice2] if self.player.skewchoice2 else [self.player.skewchoice1, ""]
         return {
             "screen_number": 3,
             "subtitle": "Individual makes another choice of which lottery A-F, with new values. Can choose new lottery or keep original choice",
@@ -84,8 +84,22 @@ class Screen3(Page, AbstractScreen):
             "choices": choices,
             "selected": selected}
 
+    def before_next_page(self):
+        self.player.set_payoff()
+
+
+class Results(Page):
+
+    def vars_for_template(self):
+        squares = graph.render_squares(Constants.pie_conf["colors"])
+        snum, soption, choices = self.player.selected_skew()
+        return {
+            "snum": snum, "soption": soption,
+            "landed": squares[self.player.winning_choice],
+            "choices": list(zip(squares, choices))}
+
 
 page_sequence = [
-    Screen1, Screen2, Screen3
-    #~ Results
+    Screen1, Screen2, Screen3,
+    Results
 ]

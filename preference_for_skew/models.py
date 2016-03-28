@@ -70,5 +70,24 @@ class Group(BaseGroup):
 class Player(BasePlayer):
 
     skewchoice1 = models.CharField(max_length=50, choices=sorted(Constants.skewchoices1), widget=widgets.RadioSelectHorizontal())
-    skewchoice2 = models.CharField(max_length=50, choices=sorted(Constants.skewchoices2), widget=widgets.RadioSelectHorizontal())
-    skewchoice3 = models.CharField(max_length=50, choices=sorted(Constants.skewchoices3), widget=widgets.RadioSelectHorizontal())
+    skewchoice2 = models.CharField(max_length=50, choices=sorted(Constants.skewchoices2), widget=widgets.RadioSelectHorizontal(), null=True, blank=True)
+    skewchoice3 = models.CharField(max_length=50, choices=sorted(Constants.skewchoices3), widget=widgets.RadioSelectHorizontal(), null=True, blank=True)
+
+    winning_choice = models.IntegerField()
+
+    def selected_skew(self):
+        if self.skewchoice3:
+            return 3, self.skewchoice3, Constants.skewchoices3[self.skewchoice3]
+        if self.skewchoice2:
+            return 2, self.skewchoice2, Constants.skewchoices2[self.skewchoice2]
+        return 1, self.skewchoice1, Constants.skewchoices1[self.skewchoice1]
+
+    def set_payoff(self):
+        snum, soption, choices = self.selected_skew()
+
+        sample = []
+        for idx, e in enumerate(Constants.pie_data):
+            sample.extend([idx] * e)
+
+        self.winning_choice = random.choice(sample)
+        self.payoff = choices[self.winning_choice]

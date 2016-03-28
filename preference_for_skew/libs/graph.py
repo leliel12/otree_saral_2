@@ -23,10 +23,10 @@ def render(data, labels, title, colors):
     for label, serie in zip(labels, data):
         pie_chart.add(label, serie)
 
-    squares = [SQUARE_TEMPLATE.substitute(color=color) for color in colors]
-
-    return pie_chart.render(disable_xml_declaration=True), squares
+    return pie_chart.render(disable_xml_declaration=True), render_squares(colors)
 
 
+def render_squares(colors):
+    return [SQUARE_TEMPLATE.substitute(color=color) for color in colors]
 
 

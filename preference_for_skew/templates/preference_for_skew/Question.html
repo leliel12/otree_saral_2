@@ -9,6 +9,7 @@
 <style>
     ul.nobullets {
         padding-left: 20px;
+        list-style-type: none;
     }
 
     ul.nobullets figure {
@@ -35,7 +36,10 @@
             {% for value, descs in skew_choices.items %}
             <td class="skews screen_{{forloop.parentloop.counter}} {% if not forloop.parentloop.last %}lightgreytext{% endif %}">
                 <label class="radio-inline" for="id_skewchoice{{forloop.parentloop.counter}}_{{forloop.counter}}">
-                    <input {% if not forloop.parentloop.last %}disabled="disabled"{% endif %} type="radio" id="id_skewchoice{{forloop.parentloop.counter}}_{{forloop.counter}}" value="{{value}}" name="skewchoice{{forloop.parentloop.counter}}" required=""> {{value}}
+                    <input {% if not forloop.parentloop.last %}disabled="disabled"{% endif %}
+                           type="radio" id="id_skewchoice{{forloop.parentloop.counter}}_{{forloop.counter}}"
+                           value="{{value}}"
+                           name="skewchoice{{forloop.parentloop.counter}}" {% if forloop.parentloop.first %}required=""{% endif %}> {{value}}
                 </label>
                 <ul class="nobullets">
                     {% for sq, desc in descs %}
@@ -60,6 +64,7 @@
            var selector = "input[name='skewchoice" + idx.toString() + "'][value='" + selected_value + "']";
            $(selector).prop("checked", true);
            $(selector).parents("td.skews").removeClass("lightgreytext");
+           $(selector).parents("td.skews").addClass("alert alert-info");
         }
         $("div#realcontent").removeClass("hide");
     });
