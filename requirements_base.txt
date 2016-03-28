@@ -1,1 +1,4 @@
 otree-core==0.4.34
+psycopg2==2.5.1
+django-toolbelt==0.0.1
+gunicorn==18.0
