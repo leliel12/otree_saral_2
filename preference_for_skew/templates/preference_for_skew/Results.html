@@ -1,22 +1,32 @@
-{% extends "global/Base.html" %}
-{% load staticfiles otree_tags %}
+$(document).ready(function(){
 
-{% block title %}
-    Page title
-{% endblock %}
+            var CHOICES = {{choices|safe}};
+            var SQUARES = {{squares|safe}};
 
-{% block content %}
+            $("tr.skewrow").each(function(sr_idx, row){
+                var $row = $(row);
+                var $labels = $row.find("td.skews label");
 
-<!--
-Documentation on how to write a django template here:
-https://docs.djangoproject.com/en/dev/topics/templates/
+                $row.find("td.skews").remove();
+                $labels.each(function(idx, label){
+                    var $label = $(label);
+                    $row.append("<td></td>");
+                    var $td = $row.find("td:last");
+                    $td.append(label);
 
-Bootstrap comes pre-loaded, so you can use any Bootstrap elements:
-http://getbootstrap.com/components/
+                    $td.append("<ul class='nobullets'></ul>");
+                    var $ul = $td.find("ul:last");
 
--->
+                    var choices = CHOICES[$label.text().trim()];
+                    for(var idx=0; idx < choices.length; idx++){
+                        var choice  = choices[idx];
+                        var square = SQUARES[idx];
+                        $ul.append('<li><figure>'+ square +'</figure>&nbsp;$' + choice.toFixed(2) + '</li>');
+                    }
+                });
+            });
 
-    {% next_button %}
-{% endblock %}
-
-
+            window.setTimeout(function(){
+                $("#realcontent").show();
+            }, 2000);
+        });

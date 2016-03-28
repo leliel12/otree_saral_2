@@ -1,0 +1,68 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Screen {{screen_number}}
+{% endblock %}
+
+{% block content %}
+<style>
+    ul.nobullets {
+        padding-left: 20px;
+    }
+
+    ul.nobullets figure {
+        display: inline;
+    }
+
+    .lightgreytext {
+        color: #BFBFBF;
+    }
+</style>
+
+<div id="realcontent" class="hide">
+    <h3>{{subtitle}}</h3>
+    <script type="text/javascript" src="http://kozea.github.com/pygal.js/latest/pygal-tooltips.min.js"></script>
+    <figure size="25%">
+        <!-- Pygal render() result: -->
+        {{graph|safe}}
+        <!-- End of Pygal render() result: -->
+    </figure>
+    <table class="table table-hover">
+        {% for skew_choices in choices %}
+        <tr class="skewrow {% if not forloop.last %}disabledbg{%endif%}">
+            <th class="lead text-info">{{forloop.counter}}</th>
+            {% for value, descs in skew_choices.items %}
+            <td class="skews screen_{{forloop.parentloop.counter}} {% if not forloop.parentloop.last %}lightgreytext{% endif %}">
+                <label class="radio-inline" for="id_skewchoice{{forloop.parentloop.counter}}_{{forloop.counter}}">
+                    <input {% if not forloop.parentloop.last %}disabled="disabled"{% endif %} type="radio" id="id_skewchoice{{forloop.parentloop.counter}}_{{forloop.counter}}" value="{{value}}" name="skewchoice{{forloop.parentloop.counter}}" required=""> {{value}}
+                </label>
+                <ul class="nobullets">
+                    {% for sq, desc in descs %}
+                    <li>
+                        <figure>{{sq|safe}}</figure>&nbsp;{{desc|c}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+    {% next_button %}
+</div>
+
+<script>
+    $(document).ready(function(){
+       var SELECTED = [{% for e in selected %}"{{e}}", {% endfor %}];
+       for(var idx=1; idx <= SELECTED.length; idx++){
+           var selected_value = SELECTED[idx-1];
+           var selector = "input[name='skewchoice" + idx.toString() + "'][value='" + selected_value + "']";
+           $(selector).prop("checked", true);
+           $(selector).parents("td.skews").removeClass("lightgreytext");
+        }
+        $("div#realcontent").removeClass("hide");
+    });
+</script>
+
+{% endblock %}
