@@ -129,6 +129,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'risk_aversion',
+        'display_name': "Risk Aversion",
+        'num_demo_participants': 1,
+        'app_sequence': ['risk_aversion'],
+    },
+    {
         'name': 'preference_for_skew',
         'display_name': "Preference For Skew",
         'num_demo_participants': 1,
