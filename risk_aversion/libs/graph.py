@@ -4,8 +4,6 @@
 import os
 import string
 
-from otree.common import Currency as c
-
 PATH = os.path.abspath(os.path.dirname(__file__))
 
 UNKNOW_TEMPLATE = string.Template(
@@ -16,7 +14,7 @@ FIFTY_FIFTY_TEMPLATE = string.Template(
 
 
 def render_fiftyfifty(left, right):
-    src = FIFTY_FIFTY_TEMPLATE.safe_substitute(left=c(left), right=c(right))
+    src = FIFTY_FIFTY_TEMPLATE.safe_substitute(left=left, right=right)
     return src
 
 

@@ -87,26 +87,27 @@ class Player(BasePlayer):
     roll = models.IntegerField()
 
     def get_wining_range(self):
-        if not self.winning_range:
+        if not self.wining_range:
             if self.selected_puzzle in (1, 2):
-                self.winning_range = [1, 5]
+                self.wining_range = [1, 5]
             elif self.selected_puzzle in (3, 4):
-                self.winning_range = random.choice(Constants.random_ranges)
-        return self.winning_range
+                self.wining_range = random.choice(Constants.random_ranges)
+        return self.wining_range
 
     def get_selected_puzzle(self):
-        initial_payof = 0 if self.selected_puzzle in (1, 3) else 40
+        initial_payoff = 0 if self.selected_puzzle in (1, 3) else 40
         if self.selected_puzzle == 1:
-            return 1, self.riskchoice1, Constants.loteries1[self.riskchoice1], self.get_wining_range(), initial_payoff
+            return 1, self.riskchoice1, Constants.loteries1, self.get_wining_range(), initial_payoff
         if self.selected_puzzle == 2:
-            return 2, self.riskchoice2, Constants.loteries2[self.riskchoice2], self.get_wining_range(), initial_payoff
+            return 2, self.riskchoice2, Constants.loteries2, self.get_wining_range(), initial_payoff
         if self.selected_puzzle == 3:
-            return 3, self.riskchoice3, Constants.loteries3[self.riskchoice3], self.get_wining_range(), initial_payoff
-        return 4, self.riskchoice4, Constants.loteries4[self.riskchoice3], self.get_wining_range(), initial_payoff
+            return 3, self.riskchoice3, Constants.loteries3, self.get_wining_range(), initial_payoff
+        return 4, self.riskchoice4, Constants.loteries4, self.get_wining_range(), initial_payoff
 
     def set_payoff(self):
         self.selected_puzzle = random.randint(1, 4)
-        sp, choice, lotery, wrange, initial_payoff = self.winning_range()
+        sp, choice, loteries, wrange, initial_payoff = self.get_selected_puzzle()
+        lotery = loteries[choice]
         self.roll = random.randint(1, 10)
         if self.roll <= wrange[-1]:
             self.payoff = initial_payoff + lotery[0]

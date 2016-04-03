@@ -2,54 +2,45 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Screen {{screen_number}} - <small>Subjects can click on one of the lotteries, then submit choice</small>
+    Results
 {% endblock %}
 
 {% block content %}
 <div id="realcontent">
-    <div class="instructions">
-        {% if screen_number == 1 %}
-            {% include "risk_aversion/instructions/screen_1.html" %}
-        {% elif screen_number == 2 %}
-            {% include "risk_aversion/instructions/screen_2.html" %}
-        {% elif screen_number == 3 %}
-            {% include "risk_aversion/instructions/screen_3.html" %}
-        {% elif screen_number == 4 %}
-            {% include "risk_aversion/instructions/screen_4.html" %}
-        {% endif %}
-        <p class="text-info lead text-center">Choose a lottery and validate your choice</p>
+    <div class="instructions lead">
+       We will play out lottery <span class="text-info">{{player.selected_puzzle}}</span>.
     </div>
     <table style="background-color: #F9F9F9;border-radius: 100px; margin-left:auto; margin-right:auto;">
         <tr>
             <td></td>
-            <td class="text-center">
+            <td class="text-center {% if choice == 'A' %} alert alert-success {% endif %}">
                 <figure>{{graphs.A|safe}}</figure>
                 <span class="text-info lead">A</span>
             </td>
-            <td class="text-center">
+            <td class="text-center {% if choice == 'B' %} alert alert-success {% endif %}">
                 <figure>{{graphs.B|safe}}</figure>
                 <span class="text-info lead">B</span>
             </td>
             <td></td>
         </tr>
         <tr>
-            <td class="text-center">
+            <td class="text-center {% if choice == 'F' %} alert alert-success {% endif %}">
                 <figure>{{graphs.F|safe}}</figure>
                 <span class="text-info lead">F</span>
             </td>
             <td></td><td></td>
-            <td class="text-center">
+            <td class="text-center {% if choice == 'C' %} alert alert-success {% endif %}">
                 <figure>{{graphs.C|safe}}</figure>
                 <span class="text-info lead">C</span>
             </td>
         </tr>
         <tr>
             <td></td>
-            <td class="text-center">
+            <td class="text-center {% if choice == 'E' %} alert alert-success {% endif %}">
                 <figure>{{graphs.E|safe}}</figure>
                 <span class="text-info lead">E</span>
             </td>
-            <td class="text-center">
+            <td class="text-center {% if choice == 'D' %} alert alert-success {% endif %}">
                 <figure size="15%">{{graphs.D|safe}}</figure>
                 <span class="text-info lead">D</span>
             </td>
@@ -57,10 +48,17 @@
         </tr>
     </table>
 
-    <div class="center text-center">
-        {% for field in form %}
-        {{field}}
-        {% endfor %}
+    <div class="center lead">
+        If die roll <span class="text-info">{{wrange.0}} - {{wrange.1}}</span>,
+        then you payoff is <span class="text-info">{{lotery.0|c}}</span> else your payoff if <span class="text-info">{{lotery.1|c}}</span>
+    </div>
+
+    <div class="center lead">
+        10 sided die result: <span class="text-info">{{player.roll}}</span>
+    </div>
+
+    <div class="center lead">
+        You have earned: <span class="text-info">{{player.payoff}}</span>
     </div>
 
     {% next_button %}
