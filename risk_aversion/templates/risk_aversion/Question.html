@@ -1,0 +1,41 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Screen {{screen_number}} - <small>Subjects can click on one of the lotteries, then submit choice</small>
+{% endblock %}
+
+{% block content %}
+
+<div id="realcontent">
+    <div class="instructions">
+        {% if screen_number == 1 %}
+            {% include "risk_aversion/instructions/screen_1.html" %}
+        {% elif screen_number == 2 %}
+            {% include "risk_aversion/instructions/screen_2.html" %}
+        {% elif screen_number == 3 %}
+            {% include "risk_aversion/instructions/screen_3.html" %}
+        {% elif screen_number == 4 %}
+            {% include "risk_aversion/instructions/screen_4.html" %}
+        {% endif %}
+        <p class="text-info lead">Choose a lottery and validate your choice</p>
+    </div>
+    <table>
+        <tr>
+            <td><figure size="25%">{{graphs.A|safe}}</figure></td>
+            <td><figure size="25%">{{graphs.B|safe}}</figure></td>
+        </tr>
+        <tr>
+            <td><figure size="25%">{{graphs.F|safe}}</figure></td>
+            <td><figure size="25%">{{graphs.C|safe}}</figure></td>
+        </tr>
+        <tr>
+            <td><figure size="25%">{{graphs.E|safe}}</figure></td>
+            <td><figure size="15%">{{graphs.D|safe}}</figure></td>
+        </tr>
+    </table>
+    {% next_button %}
+</div>
+
+
+{% endblock %}

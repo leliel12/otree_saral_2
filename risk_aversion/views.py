@@ -7,21 +7,26 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 
+from .libs import graph
 
-class MyPage(Page):
-    pass
 
-class ResultsWaitPage(WaitPage):
+class Screen1(Page):
 
-    def after_all_players_arrive(self):
-        pass
+    template_name = "risk_aversion/Question.html"
 
-class Results(Page):
-    pass
+    form_model = models.Player
+    form_fields = ['riskchoice1']
+    loteries = Constants.loteries1
+
+    def vars_for_template(self):
+        return {
+            "screen_number": 1,
+            "graphs": {
+                k: graph.render_fiftyfifty(*v) for k, v in self.loteries.items()}
+        }
 
 
 page_sequence = [
-    MyPage,
-    ResultsWaitPage,
-    Results
+    Screen1,
+
 ]

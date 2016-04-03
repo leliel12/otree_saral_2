@@ -21,7 +21,7 @@ Your app description
 
 class Constants(BaseConstants):
     name_in_url = 'risk_aversion'
-    players_per_group = 1
+    players_per_group = None
     num_rounds = 1
 
     loteries_choices = ["A", "B", "C", "D", "E", "F"]
