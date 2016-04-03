@@ -10,12 +10,12 @@
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    class="pygal-chart"
    id="chart-4bdaaaa3-03b0-49f4-ae34-c758d7683d2d"
-   viewBox="0 0 280.99933 280.99969"
+   viewBox="0 0 168.59959 168.59982"
    version="1.1"
    inkscape:version="0.91 r13725"
-   sodipodi:docname="foo.svg"
-   width="280.99933"
-   height="280.99969">
+   sodipodi:docname="unknow.svg"
+   width="168.59959"
+   height="168.59982">
   <metadata
      id="metadata110">
     <rdf:RDF>
@@ -43,9 +43,9 @@
      showgrid="false"
      showguides="true"
      inkscape:guide-bbox="true"
-     inkscape:zoom="1"
-     inkscape:cx="119.76258"
-     inkscape:cy="141.60419"
+     inkscape:zoom="2"
+     inkscape:cx="-79.069009"
+     inkscape:cy="110.69971"
      inkscape:window-x="0"
      inkscape:window-y="25"
      inkscape:window-maximized="1"
@@ -55,7 +55,7 @@
      fit-margin-right="0"
      fit-margin-bottom="0">
     <sodipodi:guide
-       position="-170.37111,-271.00996"
+       position="-226.57097,-327.20989"
        orientation="1,0"
        id="guide4371" />
   </sodipodi:namedview>
@@ -83,37 +83,37 @@
      class="series serie-0 color-0"
      id="g67"
      style="fill:#f44336;stroke:#f44336"
-     transform="translate(-103.90034,-27.500002)" />
+     transform="translate(-160.10021,-83.699943)" />
   <g
      class="series serie-1 color-1"
      id="g69"
      style="fill:#3f51b5;stroke:#3f51b5"
-     transform="translate(-103.90034,-27.500002)" />
+     transform="translate(-160.10021,-83.699943)" />
   <g
      class="series serie-2 color-2"
      id="g71"
      style="fill:#009688;stroke:#009688"
-     transform="translate(-103.90034,-27.500002)" />
+     transform="translate(-160.10021,-83.699943)" />
   <g
      class="series serie-0 color-0"
      id="g75"
      style="fill:#f44336;stroke:#f44336"
-     transform="translate(-103.90034,-27.500002)" />
+     transform="translate(-160.10021,-83.699943)" />
   <g
      class="series serie-1 color-1"
      id="g77"
      style="fill:#3f51b5;stroke:#3f51b5"
-     transform="translate(-103.90034,-27.500002)" />
+     transform="translate(-160.10021,-83.699943)" />
   <g
      class="series serie-2 color-2"
      id="g79"
      style="fill:#009688;stroke:#009688"
-     transform="translate(-103.90034,-27.500002)" />
+     transform="translate(-160.10021,-83.699943)" />
   <g
      class="tooltip"
      style="font-size:14px;font-family:Consolas, 'Liberation Mono', Menlo, Courier, monospace;opacity:0"
      id="g83"
-     transform="translate(-103.90034,-27.500002)">
+     transform="translate(-160.10021,-83.699943)">
     <rect
        class="tooltip-box"
        height="0"
@@ -132,7 +132,7 @@
      xml:space="preserve"
      id="flowRoot4412"
      style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-     transform="translate(-170.90034,-47.500002)"><flowRegion
+     transform="translate(-227.10021,-103.69994)"><flowRegion
        id="flowRegion4414"><rect
          id="rect4416"
          width="434.87067"
@@ -141,132 +141,141 @@
          y="119.8745" /></flowRegion><flowPara
        id="flowPara4418" /></flowRoot>  <g
      id="g4183"
-     transform="matrix(0.55643506,0,0,0.55643506,9.6531156e-7,-3.720852e-7)">
+     transform="matrix(0.55643506,0,0,0.55643506,-56.199865,-56.199941)">
     <g
-       id="g4218">
+       transform="matrix(0.3,-0.51961524,0.51961524,0.3,0.08739445,353.69087)"
+       style="fill:#f44336;stroke:#f44336"
+       id="g21"
+       class="series serie-0 color-0">
       <g
-         class="series serie-0 color-0"
-         id="g21"
-         style="fill:#f44336;stroke:#f44336"
-         transform="matrix(0.5,-0.8660254,0.8660254,0.5,-168.18745,421.15145)">
+         id="g23"
+         class="slices">
         <g
-           class="slices"
-           id="g23">
-          <g
-             class="slice"
-             id="g25">
-            <path
-               class="slice reactive tooltip-trigger"
-               d="M 356.4,28 A 252,252 0 0 1 574.6384,406 L 356.4,280 Z"
-               id="path27"
-               inkscape:connector-curvature="0"
-               style="fill-opacity:0.7" />
-            <desc
-               class="value"
-               id="desc29">33.33%</desc>
-            <desc
-               class="x centered"
-               id="desc31">465.519200877</desc>
-            <desc
-               class="y centered"
-               id="desc33">217.0</desc>
-          </g>
+           id="g25"
+           class="slice">
+          <path
+             style="fill-opacity:0.7"
+             inkscape:connector-curvature="0"
+             id="path27"
+             d="M 356.4,28 A 252,252 0 0 1 574.6384,406 L 356.4,280 Z"
+             class="slice reactive tooltip-trigger" />
+          <desc
+             id="desc29"
+             class="value">33.33%</desc>
+          <desc
+             id="desc31"
+             class="x centered">465.519200877</desc>
+          <desc
+             id="desc33"
+             class="y centered">217.0</desc>
         </g>
       </g>
+    </g>
+    <g
+       transform="matrix(0.3,-0.51961524,0.51961524,0.3,0.08739445,353.69087)"
+       style="fill:#3f51b5;stroke:#3f51b5"
+       id="g35"
+       class="series serie-1 color-1">
       <g
-         class="series serie-1 color-1"
-         id="g35"
-         style="fill:#3f51b5;stroke:#3f51b5"
-         transform="matrix(0.5,-0.8660254,0.8660254,0.5,-168.18745,421.15145)">
+         id="g37"
+         class="slices">
         <g
-           class="slices"
-           id="g37">
-          <g
-             class="slice"
-             id="g39">
-            <path
-               class="slice reactive tooltip-trigger"
-               d="m 574.6384,406 a 252,252 0 0 1 -436.4768,0 L 356.4,280 Z"
-               id="path41"
-               inkscape:connector-curvature="0"
-               style="fill-opacity:0.7" />
-            <desc
-               class="value"
-               id="desc43">33.33%</desc>
-            <desc
-               class="x centered"
-               id="desc45">356.4</desc>
-            <desc
-               class="y centered"
-               id="desc47">406.0</desc>
-          </g>
+           id="g39"
+           class="slice">
+          <path
+             style="fill-opacity:0.7"
+             inkscape:connector-curvature="0"
+             id="path41"
+             d="m 574.6384,406 a 252,252 0 0 1 -436.4768,0 L 356.4,280 Z"
+             class="slice reactive tooltip-trigger" />
+          <desc
+             id="desc43"
+             class="value">33.33%</desc>
+          <desc
+             id="desc45"
+             class="x centered">356.4</desc>
+          <desc
+             id="desc47"
+             class="y centered">406.0</desc>
         </g>
       </g>
+    </g>
+    <g
+       transform="matrix(0.3,-0.51961524,0.51961524,0.3,0.08739445,353.69087)"
+       style="fill:#009688;stroke:#009688"
+       id="g49"
+       class="series serie-2 color-2">
       <g
-         class="series serie-2 color-2"
-         id="g49"
-         style="fill:#009688;stroke:#009688"
-         transform="matrix(0.5,-0.8660254,0.8660254,0.5,-168.18745,421.15145)">
+         id="g51"
+         class="slices">
         <g
-           class="slices"
-           id="g51">
-          <g
-             class="slice"
-             id="g53">
-            <path
-               class="slice reactive tooltip-trigger"
-               d="M 138.1616,406 A 252,252 0 0 1 356.4,28 l 0,252 z"
-               id="path55"
-               inkscape:connector-curvature="0"
-               style="fill-opacity:0.7" />
-            <desc
-               class="value"
-               id="desc57">33.33%</desc>
-            <desc
-               class="x centered"
-               id="desc59">247.280799123</desc>
-            <desc
-               class="y centered"
-               id="desc61">217.0</desc>
-          </g>
+           id="g53"
+           class="slice">
+          <path
+             style="fill-opacity:0.7"
+             inkscape:connector-curvature="0"
+             id="path55"
+             d="M 138.1616,406 A 252,252 0 0 1 356.4,28 l 0,252 z"
+             class="slice reactive tooltip-trigger" />
+          <desc
+             id="desc57"
+             class="value">33.33%</desc>
+          <desc
+             id="desc59"
+             class="x centered">247.280799123</desc>
+          <desc
+             id="desc61"
+             class="y centered">217.0</desc>
         </g>
       </g>
-      <flowRoot
-         xml:space="preserve"
-         id="flowRoot4420"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         transform="translate(-170.90034,-47.500001)"><flowRegion
-           id="flowRegion4422"><rect
-             id="rect4424"
-             width="437.6991"
-             height="51.618793"
-             x="204.35387"
-             y="121.28871"
-             style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
-           id="flowPara4426">${up}</flowPara></flowRoot>      <flowRoot
-         transform="translate(-295.16423,171.13227)"
-         xml:space="preserve"
-         id="flowRoot4420-0"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
-           id="flowRegion4422-8"><rect
-             id="rect4424-6"
-             width="225.60106"
-             height="55.154324"
-             x="309.71277"
-             y="116.33897"
-             style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
-           id="flowPara4426-3">${left}</flowPara></flowRoot>      <flowRoot
-         transform="translate(-43.164567,170.23384)"
-         xml:space="preserve"
-         id="flowRoot4420-0-3"
-         style="font-style:normal;font-weight:normal;font-size:40px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"><flowRegion
-           id="flowRegion4422-8-6"><rect
-             id="rect4424-6-7"
-             width="225.60106"
-             height="55.154324"
-             x="309.71277"
-             y="116.33897"
-             style="text-align:center;text-anchor:middle" /></flowRegion><flowPara
-           id="flowPara4426-3-7">${right}</flowPara></flowRoot>    </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="253.00943"
+       y="183.5443"
+       id="text4925"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="253.00943"
+         y="183.5443"
+         id="tspan4927"
+         style="stroke:none"><tspan
+           x="253.00943"
+           y="183.5443"
+           id="tspan4929"
+           style="stroke:none">${up}</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="177.40953"
+       y="297.40524"
+       id="text4931"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="177.40953"
+         y="297.40524"
+         id="tspan4933"
+         style="stroke:none"><tspan
+           x="177.40953"
+           y="297.40524"
+           id="tspan4935"
+           style="stroke:none">${left}</tspan></tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:24px;line-height:125%;font-family:sans-serif;text-align:center;letter-spacing:0px;word-spacing:0px;text-anchor:middle;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="328.60931"
+       y="296.86618"
+       id="text4937"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="328.60931"
+         y="296.86618"
+         id="tspan4939"
+         style="stroke:none"><tspan
+           x="328.60931"
+           y="296.86618"
+           id="tspan4941"
+           style="stroke:none">${right}</tspan></tspan></text>
   </g>
 </svg>

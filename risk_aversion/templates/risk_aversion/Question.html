@@ -6,7 +6,6 @@
 {% endblock %}
 
 {% block content %}
-
 <div id="realcontent">
     <div class="instructions">
         {% if screen_number == 1 %}
@@ -20,20 +19,50 @@
         {% endif %}
         <p class="text-info lead">Choose a lottery and validate your choice</p>
     </div>
-    <table>
+    <table style="background-color: #F9F9F9;border-radius: 100px; margin-left:auto; margin-right:auto;">
         <tr>
-            <td><figure size="25%">{{graphs.A|safe}}</figure></td>
-            <td><figure size="25%">{{graphs.B|safe}}</figure></td>
+            <td></td>
+            <td class="text-center">
+                <figure>{{graphs.A|safe}}</figure>
+                <span class="text-info lead">A</span>
+            </td>
+            <td class="text-center">
+                <figure>{{graphs.B|safe}}</figure>
+                <span class="text-info lead">B</span>
+            </td>
+            <td></td>
         </tr>
         <tr>
-            <td><figure size="25%">{{graphs.F|safe}}</figure></td>
-            <td><figure size="25%">{{graphs.C|safe}}</figure></td>
+            <td class="text-center">
+                <figure>{{graphs.F|safe}}</figure>
+                <span class="text-info lead">F</span>
+            </td>
+            <td></td><td></td>
+            <td class="text-center">
+                <figure>{{graphs.C|safe}}</figure>
+                <span class="text-info lead">C</span>
+            </td>
         </tr>
         <tr>
-            <td><figure size="25%">{{graphs.E|safe}}</figure></td>
-            <td><figure size="15%">{{graphs.D|safe}}</figure></td>
+            <td></td>
+            <td class="text-center">
+                <figure>{{graphs.E|safe}}</figure>
+                <span class="text-info lead">E</span>
+            </td>
+            <td class="text-center">
+                <figure size="15%">{{graphs.D|safe}}</figure>
+                <span class="text-info lead">D</span>
+            </td>
+            <td></td>
         </tr>
     </table>
+
+    <div class="center text-center">
+        {% for field in form %}
+        {{field}}
+        {% endfor %}
+    </div>
+
     {% next_button %}
 </div>
 
