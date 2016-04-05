@@ -129,6 +129,12 @@ SESSION_CONFIG_DEFAULTS = {
 
 SESSION_CONFIGS = [
     {
+        'name': 'time_preferences',
+        'display_name': "Time Preferences",
+        'num_demo_participants': 1,
+        'app_sequence': ['time_preferences'],
+    },
+    {
         'name': 'risk_aversion',
         'display_name': "Risk Aversion",
         'num_demo_participants': 1,
