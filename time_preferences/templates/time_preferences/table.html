@@ -1,0 +1,50 @@
+{% load otree_tags %}
+<style>
+
+table.tp-table th{
+    font-size: 10px;
+}
+
+.fake-input {
+    cursor: default !important;
+}
+
+</style>
+
+<table class="table table-hover {% if not player.selected_decision %}table-striped{% endif %} tp-table">
+    <thead>
+        <tr>
+            <th>Decision</th>
+            <th>Option A: Amount to be paid in 1 month</th>
+            <th>Option B: Amount to be paid in 13 months</th>
+            <th>Anual Interest Rate</th>
+            <th>Anual Effective Interest Rate</th>
+            <th>A or B</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for dec in Constants.decisions %}
+        <tr {% if player.selected_decision == forloop.counter %} class="alert alert-success" {% endif %}>
+            <td>{{forloop.counter}}</td>
+            <td>{{dec.A|c}}</td>
+            <td>{{dec.B|c}}</td>
+            <td>{{dec.air}}%</td>
+            <td>{{dec.aeir}}%</td>
+            <td>
+                {% for field in form %}
+                    {% if forloop.counter == forloop.parentloop.counter %}
+                        <td>{{field}}</td>
+                    {% endif %}
+                {% empty %}
+                    {% for fv in player.fields_iterator %}
+                        {% if forloop.counter == forloop.parentloop.counter %}
+                            <label class="radio-inline fake-input" for="fake_{{forloop.counter}}_a"><input {% if fv == "A" %}checked{% endif %} class="fake-input" type="radio" id="fake_{{forloop.counter}}_a" value="A" disabled> A</label>
+                            <label class="radio-inline fake-input" for="fake_{{forloop.counter}}_b"><input {% if fv == "B" %}checked{% endif %} class="fake-input" type="radio" id="fake_{{forloop.counter}}_b" value="B" disabled> B</label>
+                        {% endif %}
+                    {% endfor %}
+                {% endfor %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>

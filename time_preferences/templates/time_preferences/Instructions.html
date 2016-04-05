@@ -1,0 +1,34 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Instructions
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>You are presented with <strong>10</strong> decision tasks. &nbsp;You will make a decision in all <strong>10</strong> and then <strong>one will be selected at random</strong>. &nbsp;Below you will see a sample of this screen. &nbsp;The decisions all have a similar format. For example, look at <strong>Decision 1</strong> at the top. <strong>Option A</strong> pays <strong>100 one month from now</strong> and <strong>Option B pays 105.09 thirteen months from now</strong>. If you choose <strong>Option B</strong> you will earn an <strong>annual return of 5%</strong> on the <strong>100</strong> you choose to receive <strong>13 months from now</strong>. Since this is <strong>compounded quarterly</strong> your <strong>annual effective interest rate is 5.09%</strong>. The only difference in the other nine decisions is that as you move down the table the payoffs for <strong>Option B</strong> increase. You have a<strong> 1-in-10</strong> chance of being paid for one of the decision problems which will be decided by rolling a ten-sided die.</p>
+            <p>For the selected decision we will pay you according to your selected option.
+               You will then receive the money at the date you choose. You will receive written
+               confirmation of your payment today, and we will transfer the money to your
+               personal bank account at the specified date.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            {% include "time_preferences/table.html" %}
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

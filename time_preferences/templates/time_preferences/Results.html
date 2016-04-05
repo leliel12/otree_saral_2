@@ -1,0 +1,32 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            {% include "time_preferences/table.html" %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 lead">
+            <p>The die landed on <strong class="text-info">{{player.selected_decision}}</strong>, so your payoff is for
+            decision <strong class="text-info">{{option}}</strong> which is <strong class="text-info">{{option_desc}}</strong></p>
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}
