@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Reading the mind in the eyes
+(Final) Task 5
 {% endblock %}
 
 {% block content %}
@@ -11,13 +11,19 @@
     <div class="row">
         <div class="col-md-12">
             {% if is_practice %}
-            <h3 class="text-center text-info">Practice screen for picking answer and clicking next.</h3>
-            <h2 class="text-center">Progress: Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}} <span class="text-info">(Practice)</span></h2>
+            <p> The last decision task will investigate your ability to read emotion from the eyes.
+    You will be shown a pair of eyes with four emotion labels around it, similar to the practice example below. You should select
+                which of the four emotion words best describes the emotion that the eyes are showing.
+    Please provide one best guess for each item.</p>
+            <h2 class="text-center">Practice Question:</h2>
             {% else %}
+            <p>Please now complete the eyes test (your progress through this test is tracked below). This is the last task. After completion, we will inform you of the number you answered correctly and how this compares to others.
+            We will also summarize your payoffs for all other decision tasks you completed.</p>
             <h2 class="text-center">Progress: Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}}</h2>
             {% endif %}
+
             <div class="text-center text-info">
-                <small>Do not press "Reload" or the back button. If you do, you will have to restart the experiment from scratch</small>
+                <small><b>Do not press "Reload" or the back button. If you do, you will have to restart the test from scratch</b></small>
             </div>
         </div>
     </div>
@@ -48,7 +54,7 @@
 
     <div class="row pull-right">
         <div class="col-md-12">
-            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Proceed">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
         </div>
     </div>
     <br>

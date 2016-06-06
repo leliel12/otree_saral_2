@@ -7,9 +7,9 @@ from . import models
 from ._builtin import Page, WaitPage
 from .models import Constants
 
-
-class Instructions(Page):
+class Intro(Page):
     pass
+
 
 
 class Question(Page):
@@ -24,10 +24,10 @@ class Results(Page):
 
     def vars_for_template(self):
         option, option_desc, decision = self.player.get_decision()
-        return {"option": option, "option_desc": option_desc, "desicion": decision}
+        return {"option": option, "option_desc": option_desc, "decision": decision}
 
 
 
 page_sequence = [
-    Instructions, Question, Results
+    Intro, Question, Results
 ]

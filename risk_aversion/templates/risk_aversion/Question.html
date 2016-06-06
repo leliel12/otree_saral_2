@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Screen {{screen_number}} - <small>Subjects can click on one of the lotteries, then submit choice</small>
+ Decision Task 2
 {% endblock %}
 
 {% block content %}
@@ -17,7 +17,7 @@
         {% elif screen_number == 4 %}
             {% include "risk_aversion/instructions/screen_4.html" %}
         {% endif %}
-        <p class="text-info lead text-center">Choose a lottery and validate your choice</p>
+        <p class="text-info lead text-center">Please choose one of the lotteries below (A - F) to play.</p>
     </div>
     <table style="background-color: #F9F9F9;border-radius: 100px; margin-left:auto; margin-right:auto;">
         <tr>
@@ -62,8 +62,9 @@
         {{field}}
         {% endfor %}
     </div>
-
-    {% next_button %}
+<p>&nbsp;</p>
+<div align="center"><p>After you have selected your preferred lottery, please press "Next."</p></div>
+    <div align="right">{% next_button %}</div>
 </div>
 
 

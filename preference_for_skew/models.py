@@ -20,7 +20,7 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'preference_for_skew'
+    name_in_url = 'Task 3'
     players_per_group = None
     num_rounds = 1
     pie_data = [50, 49, 1]
@@ -51,11 +51,11 @@ class Constants(BaseConstants):
 
     skewchoices3 = {
         'A': [1.0, 1.0, 1.0],
-        'B': [0.65, 1.71, 4.07],
-        'C': [0.30, 2.41, 7.15],
-        'D': [-0.06, 3.12, 10.22],
-        'E': [-0.41, 3.82, 13.29],
-        'F': [-0.96, 4.33, 16.17]
+        'B': [0.69, 1.65, 4.77],
+        'C': [0.37, 2.30, 8.54],
+        'D': [0.06, 2.96, 12.31],
+        'E': [-0.26, 3.61, 16.08],
+        'F': [-0.77, 4.06, 19.65]
     }
 
 

@@ -2,13 +2,13 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Results
+    Results Task 2
 {% endblock %}
 
 {% block content %}
 <div id="realcontent">
     <div class="instructions lead">
-       We will play out lottery <span class="text-info">{{player.selected_puzzle}}</span>.
+       We will play out lottery <span class="text-info">{{ra_player.selected_puzzle}}</span>.
     </div>
     <table style="background-color: #F9F9F9;border-radius: 100px; margin-left:auto; margin-right:auto;">
         <tr>
@@ -54,11 +54,11 @@
     </div>
 
     <div class="center lead">
-        10 sided die result: <span class="text-info">{{player.roll}}</span>
+        10 sided die result: <span class="text-info">{{ra_player.roll}}</span>
     </div>
 
     <div class="center lead">
-        You have earned: <span class="text-info">{{player.payoff}}</span>
+        You have earned: <span class="text-info">{{ra_player.payoff}}</span>
     </div>
 
     {% next_button %}

@@ -2,20 +2,18 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Results
+    Thank you!
 {% endblock %}
 
 {% block content %}
 <div class="content">
 
+<div class="content">
+
     <div class="row">
         <div class="col-md-12">
-          <p>We will inform you of the results of this decision task at the conclusion of this online experiment.</p>
-          <p>Please press next to proceed to the next decision task.</p>
-        </div>
-    </div>
-    <div class="row">
-      <div class="col-md-12 lead">
+            <p>Your Total Earnings are: <span class="text-info">{{final_payoff}}</span></p>
+            <p>Thank you very much for your participation!  We will email you at the email provided with payment details.></p>
         </div>
     </div>
 
@@ -26,5 +24,6 @@
     </div>
     <br>
 </div>
+
 
 {% endblock %}

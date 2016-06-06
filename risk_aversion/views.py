@@ -9,6 +9,8 @@ from .models import Constants
 
 from .libs import graph
 
+class Intro(Page):
+    pass
 
 class Screen1(Page):
 
@@ -77,7 +79,7 @@ class Screen4(Page):
         self.player.set_payoff()
 
 
-class Result(Page):
+class Results(Page):
 
     def vars_for_template(self):
         sp, choice, loteries, wrange, initial_payoff = self.player.get_selected_puzzle()
@@ -90,5 +92,5 @@ class Result(Page):
 
 
 page_sequence = [
-    Screen1, Screen2, Screen3, Screen4, Result
+    Intro, Screen1, Screen2, Screen3, Screen4, Results
 ]

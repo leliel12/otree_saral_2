@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Reading the mind in the eyes - Result {% if is_practice %}Practice{% else %}Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}}{% endif %}
+    Result {% if is_practice %}Practice{% else %}Face {{subsession.round_number}} of {{Constants.num_rounds|add:1}}{% endif %}
 {% endblock %}
 
 {% block content %}
@@ -11,7 +11,7 @@
         <div class="col-md-12 lead">
             <p>You answered <span class="text-info">{{player_answer}}</span>
             {% if is_correct %}
-            <span class="text-success">, and is correct</span></p>
+            <span class="text-success"> which is correct</span></p>
             {% else %}
             </p><p>The correct answer is <span class="text-danger">{{correct_answer}}</span></p>
             {% endif %}

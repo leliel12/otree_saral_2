@@ -1,0 +1,63 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+    Results Task 3
+{% endblock %}
+
+{% block content %}
+<style>
+    ul.nobullets {
+        padding-left: 20px;
+        list-style-type: none;
+    }
+
+    ul.nobullets figure, .inlinefigure {
+        display: inline;
+    }
+</style>
+
+<div class="content">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3 text-center">
+            <strong class=" lead">The lottery you chose to play:</strong>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-md-offset-3">
+            <div class="well">
+                <h3>{{soption}}</h3>
+                <ul class="nobullets">
+                    {% for sq, desc in choices %}
+                    <li>
+                        <figure>{{sq|safe}}</figure>&nbsp;{{desc|c}}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+               <p><strong class="lead">With 50 percent chance the pink payoff would be selected, with 49 percent chance the green, and with 1 percent chance the purple. </strong></p>
+               <p>&nbsp;</p>
+               <p><strong class="lead">The random color selected was&nbsp;
+                   <figure class="inlinefigure">{{landed|safe}}</figure>
+               </strong></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+                <strong class="lead">You have earned <span class="text-info">{{pfs_player.payoff}}</span>.</strong>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        {% next_button %}
+    </div>
+
+
+
+
+</div>
+
+{% endblock %}

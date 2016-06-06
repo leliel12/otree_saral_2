@@ -27,39 +27,39 @@ class Constants(BaseConstants):
     loteries_choices = ["A", "B", "C", "D", "E", "F"]
 
     loteries1 = {
-        "A": [2, 70],
-        "B": [28, 28],
-        "C": [24, 36],
-        "D": [20, 44],
-        "E": [16, 52],
-        "F": [12, 60]
+        "A": [0.5, 17.5],
+        "B": [7, 7],
+        "C": [6, 9],
+        "D": [5, 11],
+        "E": [4, 13],
+        "F": [3, 15]
     }
 
     loteries2 = {
-        "A": [-38, 30],
-        "B": [-12, -12],
-        "C": [-16, -4],
-        "D": [-20, 4],
-        "E": [-24, 12],
-        "F": [-28, 20]
+        "A": [-9.5, 7.5],
+        "B": [-3, -3],
+        "C": [-4, -1],
+        "D": [-5, 1],
+        "E": [-6, 3],
+        "F": [-7, 5]
     }
 
     loteries3 = {
-        "A": [2, 70],
-        "B": [28, 28],
-        "C": [24, 36],
-        "D": [20, 44],
-        "E": [18, 52],
-        "F": [12, 60]
+        "A": [0.5, 17.5],
+        "B": [7, 7],
+        "C": [6, 9],
+        "D": [5, 11],
+        "E": [4.5, 13],
+        "F": [3, 15]
     }
 
     loteries4 = {
-        "A": [-38, 30],
-        "B": [-12, -12],
-        "C": [-16, -4],
-        "D": [-20, 4],
-        "E": [-24, 12],
-        "F": [-28, 20]
+        "A": [-9.5, 7.5],
+        "B": [-3, -3],
+        "C": [-4, -1],
+        "D": [-5, 1],
+        "E": [-6, 3],
+        "F": [-7, 5]
     }
 
     random_ranges = [
@@ -95,7 +95,7 @@ class Player(BasePlayer):
         return self.wining_range
 
     def get_selected_puzzle(self):
-        initial_payoff = 0 if self.selected_puzzle in (1, 3) else 40
+        initial_payoff = 0 if self.selected_puzzle in (1, 3) else 10
         if self.selected_puzzle == 1:
             return 1, self.riskchoice1, Constants.loteries1, self.get_wining_range(), initial_payoff
         if self.selected_puzzle == 2:

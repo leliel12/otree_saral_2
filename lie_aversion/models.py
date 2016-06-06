@@ -20,10 +20,10 @@ Your app description
 
 
 class Constants(BaseConstants):
-    name_in_url = 'lie_adversion'
+    name_in_url = 'Task 4'
     players_per_group = None
     num_rounds = 1
-    euros_per_toss = 5
+    euros_per_toss = 2
 
 
 

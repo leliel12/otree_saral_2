@@ -1,0 +1,33 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Decision Task 1
+{% endblock %}
+
+{% block content %}
+<div class="content">
+
+    <div class="row">
+        <div class="col-md-12">
+            <p>In the first decision task, we will ask you to make a series of choices between a payoff amount in a one month and a payoff in 13 months. All payoffs are denominated in points.
+            <p>For example, we will ask you if you would prefer to be paid 100 points in 1 month or 105.09 points in 13 months (earning an annual interest rate of 5%).
+            Points translate into Euros at a rate of 100 points = 5 Euros ( 20 points = 1 Euro)
+            <p>You will make this decision for 10 different interest rates. One of these will be randomly selected and for this selected decision we will pay you according to your preferred option.
+               You will then receive the money at the date you choose. You will receive confirmation of your payment today, and we will transfer the money to you at the specified date.
+            <p>Please press "Next" to enter the decision screen.</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12"></div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
+        </div>
+    </div>
+    <br>
+</div>
+
+{% endblock %}

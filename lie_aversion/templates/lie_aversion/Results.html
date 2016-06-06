@@ -2,17 +2,25 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Results
+Results Task 4
 {% endblock %}
 
 {% block content %}
 <div class="content">
 
+<div class="content">
+
     <div class="row">
         <div class="col-md-12">
-            <p class="lead">You reported <strong class="text-info">{{player.tails}}</strong> tails</p>
-            <p class="lead">You earned <strong>{{Constants.euros_per_toss}} euros</strong> for each tail reported.</p>
-            <p class="lead">Your earnings for this part are <strong class="text-success">{{player.payoff}}</strong></p>
+            <p>You reported <strong class="text-info">{{player.tails}}</strong> tails</p>
+            <p>You earned <strong>{{Constants.euros_per_toss}} euros</strong> for each tail reported.</p>
+            <p>Your earnings for this part are <strong class="text-success">{{player.payoff}}</strong></p>
+        </div>
+    </div>
+
+    <div class="row pull-right">
+        <div class="col-md-12">
+            <input class="btn btn-primary btn-large btn-primary next-button" type="submit" value="Next">
         </div>
     </div>
     <br>

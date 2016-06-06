@@ -2,7 +2,7 @@
 <style>
 
 table.tp-table th{
-    font-size: 10px;
+    font-size: 10.4px;
 }
 
 .fake-input {
@@ -14,20 +14,21 @@ table.tp-table th{
 <table class="table table-hover {% if not player.selected_decision %}table-striped{% endif %} tp-table">
     <thead>
         <tr>
+        
             <th>Decision</th>
             <th>Option A: Amount to be paid in 1 month</th>
             <th>Option B: Amount to be paid in 13 months</th>
-            <th>Anual Interest Rate</th>
-            <th>Anual Effective Interest Rate</th>
-            <th>A or B</th>
+            <th>Annual Interest Rate</th>
+            <th>Annual Effective Interest Rate</th>
+            <th>Choose A or B</th>
         </tr>
     </thead>
     <tbody>
         {% for dec in Constants.decisions %}
         <tr {% if player.selected_decision == forloop.counter %} class="alert alert-success" {% endif %}>
             <td>{{forloop.counter}}</td>
-            <td>{{dec.A|c}}</td>
-            <td>{{dec.B|c}}</td>
+            <td>{{dec.A}}</td>
+            <td>{{dec.B}}</td>
             <td>{{dec.air}}%</td>
             <td>{{dec.aeir}}%</td>
             <td>

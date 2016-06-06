@@ -2,7 +2,7 @@
 {% load staticfiles otree_tags %}
 
 {% block title %}
-    Screen {{screen_number}}
+Decision Task 3
 {% endblock %}
 
 {% block content %}
@@ -22,13 +22,15 @@
 </style>
 
 <div id="realcontent" class="hide">
-    <h3>{{subtitle}}</h3>
+    <h5>{{subtitle}}</h5>
     <script type="text/javascript" src="http://kozea.github.com/pygal.js/latest/pygal-tooltips.min.js"></script>
-    <figure size="25%">
+    <div id="realcontent" class="hide" style="width:70%; height:70%;"> 
+    <figure size="">
         <!-- Pygal render() result: -->
         {{graph|safe}}
         <!-- End of Pygal render() result: -->
     </figure>
+    </div>
     <table class="table table-hover">
         {% for skew_choices in choices %}
         <tr class="skewrow {% if not forloop.last %}disabledbg{%endif%}">
@@ -53,7 +55,8 @@
         </tr>
         {% endfor %}
     </table>
-    {% next_button %}
+    <div align="center"><p>After you have selected your preferred lottery, please press "Next."</p></div>
+    <div align="right">{% next_button %}</div>
 </div>
 
 <script>

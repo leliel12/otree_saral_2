@@ -1,0 +1,37 @@
+{% extends "global/Base.html" %}
+{% load staticfiles otree_tags %}
+
+{% block title %}
+Welcome to the experiment!
+{% endblock %}
+
+{% block content %}
+<div class="row">
+    <p> Thank you for agreeing to participate in the second part of the experiment on decision making. You have already completed the first part
+        in the GATE Laboratory. This second part will be much shorter than the first one - we estimate that it should take no more than 1 hour to finish.</p>
+    <p>You will be guided through a series of 5 individual decision making scenarios where you will have the ability to make a non-trivial amount of
+        money based on the decisions you make. <b>Please make your decisions alone and do not communicate your choices to other people.</b></p>
+       <p>If you are disconnected at anytime, please reconnect using the link in the email inviting you to participate. You will be reconnected to where you left off. We will contact you for your
+           payment details when you have finished the experiment.</p>
+    <p><i>All decisions made in this experiment, as well as payoffs will remain confidential.</i></p>
+    <p>&nbsp;</p>
+    <h4>Please login with your name and email below.</h4>
+    <p>&nbsp;</p>
+    <div id="questions">
+        {% for field in form %}
+            {% formfield field %}
+        {% endfor %}
+    </div>
+</div>
+
+<p>When you have finished, please press the "Login" button to continue</p>
+
+<div class="row">
+    <span class="pull-right">
+        <input type="submit" value="Login" class="btn btn-primary btn-large btn-sucess next-button">
+    </span>
+</div>
+
+
+
+{% endblock %}

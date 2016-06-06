@@ -66,12 +66,48 @@ class Question(Page):
             "options": question["options"],
             "image": "/".join(["eyes_mind", question["fname"]])}
 
+#original "before_next_page(self)
+    """
     def before_next_page(self):
         round_number, question, field_name, response = self.get_question_data()
         if question["options"][question["answer"]] == response:
             self.player.payoff = 1
 
+    """
 
+#KJ Edited version below
+
+    def before_next_page(self):
+        round_number, question, field_name, response = self.get_question_data()
+        if question["options"][question["answer"]] == response:
+            self.player.payoff = 1
+
+    def get_question_data(self):
+        round_number = self.subsession.round_number
+        question = Constants.questions[round_number - 1]
+        field_name = "response_q{}".format(round_number)
+        response = getattr(self.player, field_name)
+        return round_number, question, field_name, response
+
+    def vars_for_template(self):
+        round_number, question, field_name, response = self.get_question_data()
+        correct_answer = question["options"][question["answer"]]
+        player_answer = response
+        is_correct = (player_answer == correct_answer)
+        return {
+            "is_practice": False,
+            "options": question["options"],
+            "correct_answer": correct_answer,
+            "answer_idx": question["answer"],
+            "player_answer": player_answer,
+            "is_correct": is_correct,
+            "image": "/".join(["eyes_mind", question["fname"]])}
+
+
+
+#KJ commenting this out below  Do I need to move some of the code below to the page above?
+# To ensure "is correct" and such are saved?
+"""
 class Result(Page):
     template_name = 'eyes_mind/Results.html'
 
@@ -95,6 +131,7 @@ class Result(Page):
             "player_answer": player_answer,
             "is_correct": is_correct,
             "image": "/".join(["eyes_mind", question["fname"]])}
+"""
 
 
 class Resume(Page):
@@ -113,6 +150,6 @@ class Resume(Page):
 
 
 page_sequence = [
-    Example, ResultExample,
-    Question, Result, Resume
+  # Example, ResultExample, Question, Result, Resume
+    Example, ResultExample, Question, Resume
 ]
