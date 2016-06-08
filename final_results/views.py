@@ -18,7 +18,9 @@ class Results_task1(Page):
     def vars_for_template(self):
         tp_player = self.player.participant.time_preferences_player.first()
         option, option_desc, decision = tp_player.get_decision()
-        return {"option": option, "option_desc": option_desc, "decision": decision, "tp_player": tp_player, "tp_constants": tp_constants}
+        return {"option": option, "option_desc": option_desc,
+                "decision": decision, "tp_player": tp_player,
+                "tp_constants": tp_constants}
 
 
 class Results_task2(Page):
@@ -44,14 +46,18 @@ class Results_task3(Page):
             "landed": squares[pfs_player.winning_choice],
             "choices": list(zip(squares, choices))}
 
+
 class final_payoff(Page):
 
     def vars_for_template(self):
         tp_player = self.player.participant.time_preferences_player.first()
         ra_player = self.player.participant.risk_aversion_player.first()
         pfs_player = self.player.participant.preference_for_skew_player.first()
-        return {
-            "final_payoff": tp_player.payoff + ra_player.payoff + pfs_player.payoff}
+        la_player = self.player.participant.lie_aversion_player.first()
+        final_payoff = (
+            (tp_player.payoff/5) + ra_player.payoff +
+            pfs_player.payoff + la_player.payoff)
+        return {"final_payoff": final_payoff}
 
 
 
